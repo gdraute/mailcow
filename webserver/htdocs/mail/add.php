@@ -68,6 +68,16 @@ if (isset($_SESSION['mailcow_cc_role']) && ($_SESSION['mailcow_cc_role'] == "adm
 							<label><input type="checkbox" name="active" checked> <?=$lang['add']['active'];?></label>
 							</div>
 						</div>
+						<div class="col-sm-offset-2 col-sm-10">
+							<div class="checkbox">
+							<label><input type="checkbox" name="disableimap" checked> <?=$lang['add']['disableimap'];?></label>
+							</div>
+						</div>
+						<div class="col-sm-offset-2 col-sm-10">
+							<div class="checkbox">
+							<label><input type="checkbox" name="disablepop3" checked> <?=$lang['add']['disablepop3'];?></label>
+							</div>
+						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
