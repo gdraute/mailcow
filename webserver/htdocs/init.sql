@@ -79,6 +79,8 @@ CREATE TABLE IF NOT EXISTS `mailbox` (
   `tls_enforce_in` tinyint(1) NOT NULL DEFAULT '0',
   `tls_enforce_out` tinyint(1) NOT NULL DEFAULT '0',
   `active` tinyint(1) NOT NULL DEFAULT '1',
+  `disableimap` tinyint(1) NOT NULL DEFAULT '0',
+  `disablepop3` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`username`),
   KEY `domain` (`domain`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
