@@ -1644,11 +1644,15 @@ function mailbox_edit_mailbox($postarray) {
 		$stmt = $pdo->prepare("UPDATE `mailbox` SET
 				`modified` = :modified,
 				`active` = :active,
+				`disableimap` = :disableimap,
+				`disablepop3` = :disablepop3,
 				`name`= :name,
 				`quota` = :quota_b
 					WHERE `username` = :username");
 		$stmt->execute(array(
 			':active' => $active,
+			':disableimap' => $disableimap,
+			':disablepop3' => $disablepop3,
 			':modified' => date('Y-m-d H:i:s'),
 			':name' => utf8_decode($name),
 			':quota_b' => $quota_b,
