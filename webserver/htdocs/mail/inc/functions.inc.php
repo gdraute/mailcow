@@ -899,6 +899,8 @@ function mailbox_add_mailbox($postarray) {
 	}
 
 	isset($postarray['active']) ? $active = '1' : $active = '0';
+	isset($postarray['disableimap']) ? $active = '1' : $active = '0';
+	isset($postarray['disablepop3']) ? $active = '1' : $active = '0';
 
 	$quota_b		= ($quota_m * 1048576);
 	$maildir		= $domain."/".$local_part."/";
@@ -1462,6 +1464,8 @@ function mailbox_edit_mailbox($postarray) {
 	global $lang;
 	global $pdo;
 	isset($postarray['active']) ? $active = '1' : $active = '0';
+	isset($postarray['disableimap']) ? $active = '1' : $active = '0';
+	isset($postarray['disablepop3']) ? $active = '1' : $active = '0';
 	if (!filter_var($postarray['username'], FILTER_VALIDATE_EMAIL)) {
 		$_SESSION['return'] = array(
 			'type' => 'danger',
