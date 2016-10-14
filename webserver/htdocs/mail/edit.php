@@ -401,7 +401,7 @@ if (isset($_SESSION['mailcow_cc_role']) && ($_SESSION['mailcow_cc_role'] == "adm
 	elseif (isset($_GET['mailbox']) && filter_var($_GET["mailbox"], FILTER_VALIDATE_EMAIL) && !empty($_GET["mailbox"])) {
 			$mailbox = $_GET["mailbox"];
 			try {
-				$stmt = $pdo->prepare("SELECT `username`, `domain`, `name`, `quota`, `active` FROM `mailbox` WHERE `username` = :username1");
+				$stmt = $pdo->prepare("SELECT `username`, `domain`, `name`, `quota`, `active`, `disableimap`, `disablepop3` FROM `mailbox` WHERE `username` = :username1");
 				$stmt->execute(array(
 					':username1' => $mailbox,
 				));
