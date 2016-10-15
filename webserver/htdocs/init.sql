@@ -82,6 +82,7 @@ CREATE TABLE IF NOT EXISTS `mailbox` (
   `disableimap` tinyint(1) NOT NULL DEFAULT '0',
   `disablepop3` tinyint(1) NOT NULL DEFAULT '0',
   `disablesmtp` tinyint(1) NOT NULL DEFAULT '0',
+  `disablelmtp` tinyint(1) NOT NULL DEFAULT '0',
   `disabledoveadm` tinyint(1) NOT NULL DEFAULT '0',
   `disabledovesieve` tinyint(1) NOT NULL DEFAULT '0',
   `disabledovelda` tinyint(1) NOT NULL DEFAULT '0',
