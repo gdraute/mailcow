@@ -627,6 +627,10 @@ DEBIAN_FRONTEND=noninteractive ${APT} -y install dovecot-common dovecot-core dov
 			if [[ -z $(mysql --host ${my_dbhost} -u root -p${my_rootpw} ${my_mailcowdb} -e "SHOW COLUMNS FROM mailbox LIKE 'disableimap';" -N -B) ]]; then
 				mysql --host ${my_dbhost} -u root -p${my_rootpw} ${my_mailcowdb} -e "ALTER TABLE mailbox ADD disableimap tinyint(1) NOT NULL DEFAULT '0';" -N -B
 				mysql --host ${my_dbhost} -u root -p${my_rootpw} ${my_mailcowdb} -e "ALTER TABLE mailbox ADD disablepop3 tinyint(1) NOT NULL DEFAULT '0';" -N -B
+				mysql --host ${my_dbhost} -u root -p${my_rootpw} ${my_mailcowdb} -e "ALTER TABLE mailbox ADD disablesmtp tinyint(1) NOT NULL DEFAULT '0';" -N -B
+				mysql --host ${my_dbhost} -u root -p${my_rootpw} ${my_mailcowdb} -e "ALTER TABLE mailbox ADD disabledoveadm tinyint(1) NOT NULL DEFAULT '0';" -N -B
+				mysql --host ${my_dbhost} -u root -p${my_rootpw} ${my_mailcowdb} -e "ALTER TABLE mailbox ADD disabledsieve tinyint(1) NOT NULL DEFAULT '0';" -N -B
+				mysql --host ${my_dbhost} -u root -p${my_rootpw} ${my_mailcowdb} -e "ALTER TABLE mailbox ADD disablelda tinyint(1) NOT NULL DEFAULT '0';" -N -B
 			fi
 			mysql --host ${my_dbhost} -u root -p${my_rootpw} ${my_mailcowdb} -e "DELETE FROM spamalias"
 			mysql --host ${my_dbhost} -u root -p${my_rootpw} ${my_mailcowdb} -e "ALTER TABLE spamalias MODIFY COLUMN validity int(11) NOT NULL"

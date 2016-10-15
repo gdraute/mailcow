@@ -81,6 +81,10 @@ CREATE TABLE IF NOT EXISTS `mailbox` (
   `active` tinyint(1) NOT NULL DEFAULT '1',
   `disableimap` tinyint(1) NOT NULL DEFAULT '0',
   `disablepop3` tinyint(1) NOT NULL DEFAULT '0',
+  `disablesmtp` tinyint(1) NOT NULL DEFAULT '0',
+  `disabledoveadm` tinyint(1) NOT NULL DEFAULT '0',
+  `disabledovesieve` tinyint(1) NOT NULL DEFAULT '0',
+  `disabledovelda` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`username`),
   KEY `domain` (`domain`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
